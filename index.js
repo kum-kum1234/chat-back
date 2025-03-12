@@ -8,6 +8,14 @@ app.use(express.json());
 
 // Initialize Gemini client with API key
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+// index.js (backend)
+const cors = require('cors');
+app.use(cors({
+  origin: 'http://localhost:3000', // Your Next.js frontend port
+  methods: ['POST', 'GET'],
+  credentials: true,
+}));
+
 
 // Gemini model configuration
 const model = genAI.getGenerativeModel({
