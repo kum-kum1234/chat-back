@@ -11,7 +11,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 // index.js (backend)
 const cors = require('cors');
 app.use(cors({
-  origin: 'http://localhost:3000', // Your Next.js frontend port
+  origin: 'https://chatbot-ashen-five.vercel.app', // Your Next.js frontend port
   methods: ['POST', 'GET'],
   credentials: true,
 }));
